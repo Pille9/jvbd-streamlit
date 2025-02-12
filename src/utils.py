@@ -1,13 +1,19 @@
-from dotenv import load_dotenv
-from sqlalchemy import create_engine
-import pandas as pd
+import pickle
+import streamlit as st
+from tensorflow.keras.models import load_model
+import tensorflow as tf
 
-# load the .env file variables
-load_dotenv()
+def adivina_caratula(imagen):
+    # Cargar el modelo
+    # realizar predicción
+    print('Estamos en mantenimiento')
 
+def adivina_cantante(cantante):
+    # Cargar el modelo
+    # realizar predicción
+    print('Estamos en mantenimiento')
 
-def db_connect():
-    import os
-    engine = create_engine(os.getenv('DATABASE_URL'))
-    engine.connect()
-    return engine
+def adivina_audio(cantante):
+    # Cargar el modelo
+    # realizar predicción
+    print('Estamos en mantenimiento')
