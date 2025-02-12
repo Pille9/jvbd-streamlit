@@ -8,7 +8,7 @@ def main():
     <style>
     body {
         background-image: url("https://es.akinator.com/assets/img/akitudes_520x650/defi.png");
-        background-size: 400x500;
+        background-size: 60%;
     }
     </style>
     """,
