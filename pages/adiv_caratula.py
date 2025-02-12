@@ -4,7 +4,7 @@ import numpy as np
 from utils import adivina_caratula
 
 # Título de la aplicación
-st.title('Adivina la carátula')
+st.title('Adivina el género musical:')
 
 # Cargar imagen
 caratula = st.file_uploader('Subir carátula', type=["jpg", "jpeg", "png"])

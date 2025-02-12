@@ -15,11 +15,11 @@ def main():
 
 def route_prediction(opcion):
     if opcion == 'Audio':
-        switch_page("/workspaces/jvbd-streamlit/pages/adiv_audio.py")
+        switch_page("adiv_audio")
     elif opcion == 'Carátula':
-        switch_page("/workspaces/jvbd-streamlit/pages/adiv_caratula.py")
+        switch_page("adiv_caratula")
     elif opcion == 'Cantante':
-        switch_page("/workspaces/jvbd-streamlit/pages/adiv_cantante.py")
+        switch_page("adiv_cantante")
 
 if __name__ == "__main__":
     main()
