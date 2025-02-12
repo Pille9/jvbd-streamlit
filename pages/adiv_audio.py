@@ -16,7 +16,7 @@ if audio is not None:
     st.audio(audio_bytes)
 
     # Botón para iniciar
-    if st.button('Adivinar género musical'):
+    if st.button('Adivinar género musical', icon='🎶'):
         pred = adivina_audio(audio_bytes)
 
         #Mostrar resultados

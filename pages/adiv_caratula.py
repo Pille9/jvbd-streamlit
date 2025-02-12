@@ -18,7 +18,7 @@ if caratula is not None:
     imagen = np.array(imagen) / 255.0
 
     # Botón para iniciar
-    if st.button('Adivinar género musical'):
+    if st.button('Adivinar género musical', icon='🎶'):
         pred = adivina_caratula(imagen)
 
         #Mostrar resultados

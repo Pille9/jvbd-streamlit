@@ -8,7 +8,7 @@ def main():
     <style>
     body {
         background-image: url("https://es.akinator.com/assets/img/akitudes_520x650/defi.png");
-        background-size: cover;
+        background-size: 400x500;
     }
     </style>
     """,
@@ -23,7 +23,7 @@ def main():
                       index=0, 
                       key='option')
     
-    if st.button('Empezar!'):
+    if st.button('Empezar!', icon='🙌'):
         route_prediction(opcion)
 
 def route_prediction(opcion):
