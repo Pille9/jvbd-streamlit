@@ -9,7 +9,6 @@ cantante = st.text_input('Escribe el cantante', max_chars=50)
 
 # Al escribir el cantante
 if cantante is not None:
-    st.write(f'**Cantante a adivinar: {cantante}**')
 
     # Botón para iniciar
     if st.button('Adivinar género musical'):

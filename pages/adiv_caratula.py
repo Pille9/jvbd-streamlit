@@ -11,9 +11,8 @@ caratula = st.file_uploader('Subir carátula', type=["jpg", "jpeg", "png"])
 
 # Al cargar imagen
 if caratula is not None:
-    st.write('**Carátula a adivinar:**')
     imagen = Image.open(caratula).resize((32,32))
-    st.image(imagen, caption='Subido correctamente', use_column_width=True)
+    st.image(imagen, caption='Subido correctamente', use_container_width=True)
 
     #Convertir imagen a matriz
     imagen = np.array(imagen) / 255.0

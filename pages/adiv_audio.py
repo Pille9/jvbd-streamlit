@@ -11,7 +11,6 @@ audio = st.file_uploader('Subir audio', type=["wav"])
 
 # Al cargar audio
 if audio is not None:
-    st.write('**Audio a adivinar:**')
     # Cargar audio
     audio_bytes = audio.read()
     st.audio(audio_bytes)
