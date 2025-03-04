@@ -7,32 +7,21 @@ def main():
     """
     <style>
     body {
-        background-image: url("https://es.akinator.com/assets/img/akitudes_520x650/defi.png");
+        background-image: url("");
         background-size: cover;
     }
     </style>
     """,
     unsafe_allow_html=True
     )
-    st.title('Adivina el género musical')
-    st.write('**Cómo lo quieres adivinar**')
-    imagen = Image.open('akinator.webp')
-    st.image(imagen, use_container_width=True)
-    opcion = st.radio('Selecciona cómo adivinar:', 
-                      ('Audio', 'Carátula', 'Cantante'), 
-                      index=0, 
-                      key='option')
+    st.title('Honey bee or Bumble bee?')
+    st.write('...\n')
+    st.write('Press Start and upload your image')
+    #imagen = Image.open('')
+    #st.image(imagen, use_container_width=True)
     
-    if st.button('Empezar!', icon='🙌'):
-        route_prediction(opcion)
-
-def route_prediction(opcion):
-    if opcion == 'Audio':
-        switch_page("adiv_audio")
-    elif opcion == 'Carátula':
-        switch_page("adiv_caratula")
-    elif opcion == 'Cantante':
-        switch_page("adiv_cantante")
+    if st.button('Start', icon='🐝'):
+        switch_page('prediction')
 
 if __name__ == "__main__":
     main()
