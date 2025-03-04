@@ -53,8 +53,8 @@ def main():
     # Barra lateral personalizada
     with st.sidebar:
         #st.image("logo.png", width=150)  # Puedes agregar un logo si lo tienes
-        st.page_link("main.py", label="🏠 Home", icon="house")
-        st.page_link("prediction.py", label="🔍 Prediction", icon="search")
+        st.page_link("main.py", label="Home", icon="🏠")
+        st.page_link("prediction.py", label="Prediction", icon="🔍")
 
 if __name__ == "__main__":
     main()
