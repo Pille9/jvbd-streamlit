@@ -17,7 +17,7 @@ def main():
     st.title('Honey bee or Bumble bee?')
     st.write('We help you identifying the genus of the bee you have seen...\n')
     st.write('Press Start and upload your image')
-    imagen = Image.open('/workspaces/jvbd-streamlit/hb_bb.JPG')
+    imagen = Image.open('../hb_bb.JPG')
     st.image(imagen, use_container_width=True)
     
     if st.button('Start', icon='🐝'):
