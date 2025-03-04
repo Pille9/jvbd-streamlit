@@ -4,6 +4,26 @@ from PIL import Image
 import base64
 
 def main():
+    st.markdown(
+    """
+    <style>
+    [data-testid="stSidebar"] {
+        background-color: #f5f5f5;
+    }
+    [data-testid="stSidebarNav"]::before {
+        content: "🔎 Navigation";
+        font-size: 22px;
+        font-weight: bold;
+        color: black;
+        padding: 10px;
+        display: block;
+    }
+    header {visibility: hidden;}
+    </style>
+    """,
+    unsafe_allow_html=True
+    )
+
     # Imagen de fondo
     with open('background.jpg', "rb") as f:
         data = f.read()
@@ -29,6 +49,12 @@ def main():
     # Pulsar botón
     if st.button('Start', icon='🐝'):
         switch_page('prediction')
+    
+    # Barra lateral personalizada
+    with st.sidebar:
+        #st.image("logo.png", width=150)  # Puedes agregar un logo si lo tienes
+        st.page_link("main.py", label="🏠 Home", icon="house")
+        st.page_link("prediction.py", label="🔍 Prediction", icon="search")
 
 if __name__ == "__main__":
     main()
