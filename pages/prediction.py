@@ -1,25 +1,25 @@
 import streamlit as st
 from PIL import Image
 import numpy as np
-from utils import adivina_caratula
+from utils import predict_genus
 
 # Título de la aplicación
-st.title('Adivina el género musical:')
+st.title('Upload your image:')
 
 # Cargar imagen
-caratula = st.file_uploader('Subir carátula', type=["jpg", "jpeg", "png"])
+bee = st.file_uploader(type=["jpg", "jpeg", "png"])
 
 # Al cargar imagen
-if caratula is not None:
-    imagen = Image.open(caratula).resize((32,32))
+if bee is not None:
+    imagen = Image.open(bee).resize((32,32))
     st.image(imagen, caption='Subido correctamente', use_container_width=True)
 
     #Convertir imagen a matriz
     imagen = np.array(imagen) / 255.0
 
     # Botón para iniciar
-    if st.button('Adivinar género musical', icon='🎶'):
-        pred = adivina_caratula(imagen)
+    if st.button('Tell me the genus', icon='🐝'):
+        pred = predict_genus(imagen)
 
         #Mostrar resultados
-        st.write(f'El género musical es: {pred}')
+        st.write(f'This bee is a: {pred}')
