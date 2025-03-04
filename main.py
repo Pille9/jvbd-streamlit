@@ -15,10 +15,10 @@ def main():
     unsafe_allow_html=True
     )
     st.title('Honey bee or Bumble bee?')
-    st.write('...\n')
+    st.write('We help you identifying the genus of the bee you have seen...\n')
     st.write('Press Start and upload your image')
-    #imagen = Image.open('')
-    #st.image(imagen, use_container_width=True)
+    imagen = Image.open('/workspaces/jvbd-streamlit/hb_bb.JPG')
+    st.image(imagen, use_container_width=True)
     
     if st.button('Start', icon='🐝'):
         switch_page('prediction')
