@@ -3,17 +3,7 @@ from streamlit_extras.switch_page_button import switch_page
 from PIL import Image
 
 def main():
-    st.markdown(
-    """
-    <style>
-    body {
-        background-image: url("");
-        background-size: cover;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-    )
+    set_background('background.jpg')
     st.title('Honey bee or Bumble bee?')
     st.write('We help you identifying the genus of the bee you have seen...\n')
     st.write('Press Start and upload your image')
