@@ -7,7 +7,7 @@ from utils import predict_genus
 st.title('Upload your image:')
 
 # Cargar imagen
-bee = st.file_uploader('Upload your image', type=["jpg", "jpeg", "png"])
+bee = st.file_uploader(label='Upload you image', type=["jpg", "jpeg", "png"])
 
 # Al cargar imagen
 if bee is not None:
