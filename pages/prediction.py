@@ -18,7 +18,7 @@ st.markdown(
 # Barra lateral personalizada
 with st.sidebar:
     st.markdown("## 🏡 Navigation")
-    st.page_link("main.py", label="🏠 Home")
+    st.page_link("../main.py", label="🏠 Home")
     st.page_link("prediction.py", label="🐝 Identify a Bee")
 
 # Título de la aplicación
