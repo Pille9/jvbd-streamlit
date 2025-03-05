@@ -8,7 +8,7 @@ def main():
         """
         <style>
         [data-testid="stSidebar"] {
-            background-color: #f5f5f5;
+            background-color: #bcbf17;
         }
         [data-testid="stSidebarNav"]::before {
             content: "🔎 Navigation";
