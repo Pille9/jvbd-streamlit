@@ -5,23 +5,26 @@ import base64
 
 def main():
     st.markdown(
-    """
-    <style>
-    [data-testid="stSidebar"] {
-        background-color: #f5f5f5;
-    }
-    [data-testid="stSidebarNav"]::before {
-        content: "🔎 Navigation";
-        font-size: 22px;
-        font-weight: bold;
-        color: black;
-        padding: 10px;
-        display: block;
-    }
-    header {visibility: hidden;}
-    </style>
-    """,
-    unsafe_allow_html=True
+        """
+        <style>
+        [data-testid="stSidebar"] {
+            background-color: #f5f5f5;
+        }
+        [data-testid="stSidebarNav"]::before {
+            content: "🔎 Navigation";
+            font-size: 22px;
+            font-weight: bold;
+            color: black;
+            padding: 10px;
+            display: block;
+        }
+        [data-testid="stSidebarNav"] ul {
+            display: none;
+        }
+        header {visibility: hidden;}
+        </style>
+        """,
+        unsafe_allow_html=True
     )
 
     # Imagen de fondo
@@ -53,8 +56,8 @@ def main():
     # Barra lateral personalizada
     with st.sidebar:
         #st.image("logo.png", width=150)  # Puedes agregar un logo si lo tienes
-        st.page_link("main.py", label="Home", icon="🏠")
-        st.page_link("prediction.py", label="Prediction", icon="🔍")
+        st.page_link("main.py", label="🏠 Home")
+        st.page_link("prediction.py", label="🐝 Identify a Bee")
 
 if __name__ == "__main__":
     main()
