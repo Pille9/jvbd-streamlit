@@ -3,6 +3,24 @@ from PIL import Image
 import numpy as np
 from utils import predict_genus
 
+# Ocultar navegación automática de Streamlit
+st.markdown(
+    """
+    <style>
+    [data-testid="stSidebarNav"] ul {
+        display: none;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Barra lateral personalizada
+with st.sidebar:
+    st.markdown("## 🏡 Navigation")
+    st.page_link("main.py", label="🏠 Home")
+    st.page_link("prediction.py", label="🐝 Identify a Bee")
+
 # Título de la aplicación
 st.title('Upload your image:')
 
