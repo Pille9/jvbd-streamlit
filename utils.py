@@ -19,10 +19,12 @@ def predict_genus(imagen):
     predictions = model.predict(imagen_pro)
     # Obtener la clase con mayor probabilidad
     #predicted_class = np.argmax(predictions, axis=1)[0]
+    if predictions > 0.9: genus = "bombus"
+    else: genus = "apis"
     # Mapeo de índices
-    genus_labels = ["Apis", "Bombus"]  
-    predicted_genus = genus_labels[predictions]
-    return predicted_genus
+    #genus_labels = ["Apis", "Bombus"]  
+    #predicted_genus = genus_labels[predicted_class]
+    return genus
 
 def set_background(image_file):
     with open(image_file, "rb") as f:
