@@ -7,7 +7,7 @@ import tensorflow as tf
 
 @st.cache_resource             #Guardar en cache
 def load_trained_model():      #Cargar modelo
-    model = load_model("modelo.h5") 
+    model = load_model("models/modelo_abejas.h5") 
     return model
 
 def predict_genus(imagen):     
