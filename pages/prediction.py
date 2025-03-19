@@ -44,9 +44,6 @@ if bee is not None:
     imagen = Image.open(bee)
     st.image(imagen, caption='Subido correctamente', use_container_width=True)
 
-    # Preprocesar imagen
-    processed_image = preprocess_image(imagen)
-
     # Cuadro de texto para el usuario
     user_guess = st.text_input("What genus do you think this is?")
 

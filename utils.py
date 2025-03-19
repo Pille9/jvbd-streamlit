@@ -13,8 +13,10 @@ def load_trained_model():      #Cargar modelo
 def predict_genus(imagen):     
     # Cargar el modelo
     model = load_trained_model()
+    # Preprocesar imagen
+    imagen_pro = preprocess_image(imagen)
     #Hacer la predicción
-    predictions = model.predict(imagen)
+    predictions = model.predict(imagen_pro)
     # Obtener la clase con mayor probabilidad
     predicted_class = np.argmax(predictions, axis=1)[0]
     # Mapeo de índices
