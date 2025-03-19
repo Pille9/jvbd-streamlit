@@ -1,13 +1,26 @@
 import pickle
 import streamlit as st
 import base64
-##from tensorflow.keras.models import load_model
-##import tensorflow as tf
+import numpy as np
+from tensorflow.keras.models import load_model
+import tensorflow as tf
 
-def predict_genus(imagen):
+@st.cache_resource             #Guardar en cache
+def load_trained_model():      #Cargar modelo
+    model = load_model("modelo.h5") 
+    return model
+
+def predict_genus(imagen):     
     # Cargar el modelo
-    # realizar predicción
-    return '🚧⚠️**Estamos en mantenimiento**⚠️🚧'
+    model = load_trained_model()
+    #Hacer la predicción
+    predictions = model.predict(imagen)
+    # Obtener la clase con mayor probabilidad
+    predicted_class = np.argmax(predictions, axis=1)[0]
+    # Mapeo de índices
+    genus_labels = ["Apis", "Bombus"]  
+    predicted_genus = genus_labels[predicted_class]
+    return predicted_genus
 
 def set_background(image_file):
     with open(image_file, "rb") as f:
@@ -25,3 +38,8 @@ def set_background(image_file):
     '''
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
+def preprocess_image(image):
+    img = image.resize((224, 224))  # Redimensionar a 224x224
+    img_array = np.array(img) / 255.0  # Normalizar valores entre 0 y 1
+    img_array = np.expand_dims(img_array, axis=0)  # Agregar dimensión batch
+    return img_array
