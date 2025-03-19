@@ -17,13 +17,9 @@ def predict_genus(imagen):
     imagen_pro = preprocess_image(imagen)
     #Hacer la predicción
     predictions = model.predict(imagen_pro)
-    # Obtener la clase con mayor probabilidad
-    #predicted_class = np.argmax(predictions, axis=1)[0]
-    if predictions > 0.5: genus = "bombus"
-    else: genus = "apis"
-    # Mapeo de índices
-    #genus_labels = ["Apis", "Bombus"]  
-    #predicted_genus = genus_labels[predicted_class]
+    # Extraer el valor escalar
+    probabilidad = float(predictions[0])
+    genus = "bombus" if probabilidad > 0.5 else "apis"
     return genus
 
 def set_background(image_file):
