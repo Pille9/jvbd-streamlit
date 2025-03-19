@@ -19,7 +19,7 @@ def predict_genus(imagen):
     predictions = model.predict(imagen_pro)
     # Obtener la clase con mayor probabilidad
     #predicted_class = np.argmax(predictions, axis=1)[0]
-    if predictions > 0.9: genus = "bombus"
+    if predictions > 0.5: genus = "bombus"
     else: genus = "apis"
     # Mapeo de índices
     #genus_labels = ["Apis", "Bombus"]  
