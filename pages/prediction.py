@@ -45,17 +45,20 @@ if bee is not None:
     st.image(imagen, caption='Subido correctamente', use_container_width=True)
 
     # Cuadro de texto para el usuario
-    user_guess = st.text_input("What genus do you think this is?")
+    user_guess = st.text_input("What genus do you think it is?")
 
     # Botón para iniciar
     if st.button('Tell me the genus', icon='🐝'):
         pred = predict_genus(imagen)
 
-        #Mostrar resultados
+        # "a" o "an"
+        article = "an" if pred.lower().startswith(("a", "e", "i", "o", "u")) else "a"
+
+        # Mostrar resultados
         if user_guess:
             if user_guess.lower() == pred.lower():
-                st.success(f'Correct! 🎉 This bee is a {pred}.')
+                st.success(f'Correct! 🎉 This bee is {article} {pred}.')
             else:
                 st.warning(f'Almost! The correct answer is {pred}.')
         else:
-            st.write(f'This bee is a {pred}')
+            st.write(f'This bee is {article} {pred}.')

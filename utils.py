@@ -4,6 +4,7 @@ import base64
 import numpy as np
 from tensorflow.keras.models import load_model
 import tensorflow as tf
+from tensorflow.keras.applications.efficientnet import preprocess_input
 
 @st.cache_resource             #Guardar en cache
 def load_trained_model():      #Cargar modelo
@@ -39,7 +40,10 @@ def set_background(image_file):
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
 def preprocess_image(image):
+    if image.mode != 'RGB':
+        image = image.convert('RGB')
     img = image.resize((224, 224))  # Redimensionar a 224x224
-    img_array = np.array(img) / 255.0  # Normalizar valores entre 0 y 1
+    img_array = np.array(img)  # Convertir en array
     img_array = np.expand_dims(img_array, axis=0)  # Agregar dimensión batch
+    img_array = preprocess_input(img_array)  # Preprocesamiento específico para EfficientNet
     return img_array
