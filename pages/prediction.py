@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image
 import numpy as np
-from utils import predict_genus
+from utils import predict_genus, preprocess_image, set_background
 
 st.markdown(
     """

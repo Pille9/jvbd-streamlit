@@ -2,6 +2,7 @@ import streamlit as st
 from streamlit_extras.switch_page_button import switch_page
 from PIL import Image
 import base64
+from utils import set_background
 
 def main():
     st.markdown(
@@ -28,20 +29,7 @@ def main():
     )
 
     # Imagen de fondo
-    with open('background.jpg', "rb") as f:
-        data = f.read()
-    bin_str = base64.b64encode(data).decode()
-    page_bg_img = f'''
-    <style>
-    .stApp {{
-        background-image: url("data:image/jpeg;base64,{bin_str}");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-    }}
-    </style>
-    '''
-    st.markdown(page_bg_img, unsafe_allow_html=True)
+    set_background('background.jpg')
     # ´Título
     st.title('Honey bee or Bumble bee?')
     # Presentación
