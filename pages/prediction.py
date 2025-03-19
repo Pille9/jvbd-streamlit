@@ -58,4 +58,4 @@ if bee is not None:
             else:
                 st.warning(f'Almost! The correct answer is {pred}.')
         else:
-            st.write(f'This bee is a: {pred}')
+            st.write(f'This bee is a {pred}')
