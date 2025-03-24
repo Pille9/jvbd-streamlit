@@ -26,6 +26,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# Imagen de fondo
+set_background('background.jpg')
 
 # Barra lateral personalizada
 with st.sidebar:
