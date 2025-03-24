@@ -7,7 +7,7 @@ st.markdown(
     """
     <style>
     [data-testid="stSidebar"] {
-        background-color: #b9da5b;
+        background-color: #789d58;
     }
     [data-testid="stSidebarNav"]::before {
         content: "🔎 Navigation";
