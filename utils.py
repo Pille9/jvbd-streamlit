@@ -8,7 +8,7 @@ from tensorflow.keras.applications.efficientnet import preprocess_input
 
 @st.cache_resource             #Guardar en cache
 def load_trained_model():      #Cargar modelo
-    model = load_model("models/modelo_abejas.h5") 
+    model = load_model("models/modelo_abejas_transfer.keras") 
     return model
 
 def predict_genus(imagen):     
