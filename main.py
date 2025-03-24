@@ -30,15 +30,21 @@ def main():
 
     # Imagen de fondo
     set_background('image.jpg')
+    # Título en blanco
+    st.markdown("<h1 style='color: white;'>Honey bee or Bumble bee?</h1>", unsafe_allow_html=True)
+
+    # Presentación en blanco
+    st.markdown("<p style='color: white; font-size:18px;'>We assist you in determining if your bee belongs to the honey bee or bumble bee genus.</p>", unsafe_allow_html=True)
+    st.markdown("<p style='color: white; font-size:18px;'>Press Start and upload your image</p>", unsafe_allow_html=True)
     # ´Título
-    st.title('Honey bee or Bumble bee?')
+    #st.title('Honey bee or Bumble bee?')
     # Presentación
-    st.write('We assist you in determining if your bee belongs to the honey bee or bumble bee genus.\n')
-    st.write('Press Start and upload your image')
+    #st.write('We assist you in determining if your bee belongs to the honey bee or bumble bee genus.\n')
+    #st.write('Press Start and upload your image')
     imagen = Image.open('hb_bb.png')
     st.image(imagen, use_container_width=True)
     # Pulsar botón
-    if st.button('Start', icon='🐝', type='tertiary'):
+    if st.button('Start', icon='🐝'):
         switch_page('prediction')
     
     # Barra lateral personalizada
