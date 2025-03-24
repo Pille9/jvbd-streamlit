@@ -9,7 +9,7 @@ def main():
         """
         <style>
         [data-testid="stSidebar"] {
-            background-color: #8dbf17;
+            background-color: #789d58;
         }
         [data-testid="stSidebarNav"]::before {
             content: "🔎 Navigation";
