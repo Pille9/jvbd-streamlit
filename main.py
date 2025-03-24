@@ -29,16 +29,16 @@ def main():
     )
 
     # Imagen de fondo
-    set_background('background.jpg')
+    set_background('image.jpg')
     # ´Título
     st.title('Honey bee or Bumble bee?')
     # Presentación
-    st.write('We help you identifying the genus of the bee you have seen...\n')
+    st.write('We assist you in determining if your bee belongs to the honey bee or bumble bee genus.\n')
     st.write('Press Start and upload your image')
     imagen = Image.open('hb_bb.png')
     st.image(imagen, use_container_width=True)
     # Pulsar botón
-    if st.button('Start', icon='🐝'):
+    if st.button('Start', icon='🐝', type='primary'):
         switch_page('prediction')
     
     # Barra lateral personalizada

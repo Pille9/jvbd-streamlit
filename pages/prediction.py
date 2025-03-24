@@ -27,7 +27,7 @@ st.markdown(
 )
 
 # Imagen de fondo
-set_background('background.jpg')
+set_background('image.jpg')
 
 # Barra lateral personalizada
 with st.sidebar:
