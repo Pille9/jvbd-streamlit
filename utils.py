@@ -20,7 +20,8 @@ def predict_genus(imagen):
     predictions = model.predict(imagen_pro)
     # Extraer el valor escalar
     probabilidad = float(predictions[0])
-    genus = "bombus" if probabilidad > 0.5 else "apis"
+    genus = "bombus" if probabilidad > 0.49 else "apis"
+    if probabilidad == 0.50: genus = "Unknown"
     return genus
 
 def set_background(image_file):
