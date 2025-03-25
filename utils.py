@@ -8,7 +8,7 @@ from tensorflow.keras.applications.efficientnet import preprocess_input
 
 @st.cache_resource             #Guardar en cache
 def load_trained_model():      #Cargar modelo
-    model = load_model("models/modelo_abejas_transfer.keras") 
+    model = load_model("models/modelo_abejas_aug.keras") 
     return model
 
 def predict_genus(imagen):     
@@ -20,7 +20,7 @@ def predict_genus(imagen):
     predictions = model.predict(imagen_pro)
     # Extraer el valor escalar
     probabilidad = float(predictions[0])
-    genus = "bombus" if probabilidad > 0.49 else "apis"
+    genus = "bombus" if probabilidad > 0.506 else "apis"
     return genus
 
 def set_background(image_file):
