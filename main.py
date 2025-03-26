@@ -29,7 +29,7 @@ def main():
     )
 
     # Imagen de fondo
-    #set_background('image.jpg')
+    set_background('image.jpg')
     
     # ´Título
     st.title('Honey bee or Bumble bee?')
