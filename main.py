@@ -40,7 +40,7 @@ def main():
     st.image(imagen, use_container_width=True)
     # Pulsar botón
     if st.button('Start', icon='🐝'):
-        switch_page('prediction.py')
+        switch_page('prediction')
     
     # Barra lateral personalizada
     with st.sidebar:
