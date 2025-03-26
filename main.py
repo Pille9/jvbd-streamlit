@@ -29,7 +29,7 @@ def main():
     )
 
     # Imagen de fondo
-    set_background('image.jpg')
+    #set_background('image.jpg')
     
     # ´Título
     st.title('Honey bee or Bumble bee?')
@@ -44,7 +44,6 @@ def main():
     
     # Barra lateral personalizada
     with st.sidebar:
-        #st.image("logo.png", width=150)  # Puedes agregar un logo si lo tienes
         st.page_link("main.py", label="🏠 Home")
         st.page_link("pages/prediction.py", label="🐝 Identify a Bee")
 
